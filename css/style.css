@@ -92,74 +92,6 @@ textarea.form-control {
   font-family: "Playfair+Display", times, serif;
 }
 
-.site-navbar {
-  position: fixed;
-  display: none;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  min-height: 300px;
-  overflow-y: scroll;
-}
-
-.site-navbar nav {
-  text-align: left;
-}
-
-.site-navbar nav .menu {
-  font-family: "Playfair+Display", times, serif;
-}
-
-.site-navbar nav .menu li a {
-  color: #000;
-  font-size: 40px;
-  padding: 5px 10px;
-  position: relative;
-}
-
-.site-navbar nav .menu li a:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  height: 50%;
-  width: 0%;
-  z-index: -1;
-  background: #e61c5d;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-}
-
-.site-navbar nav .menu li a:hover:before {
-  width: 100%;
-}
-
-.site-navbar nav .menu li.active a:before {
-  width: 100%;
-}
-
-.site-navbar .extra-info a {
-  color: #000;
-}
-
-.site-navbar .extra-info ul li a {
-  color: #000;
-}
-
-.site-navbar .extra-info h3 {
-  font-family: "Mukta Mahee", arial, sans-serif;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: .2em;
-  color: #adb5bd;
-  margin-bottom: 30px;
-}
-
-.site-navbar .extra-info p {
-  color: #212529;
-}
 
 .full-height {
   height: 100vh;
@@ -923,4 +855,124 @@ textarea.form-control {
   background: #dc3545;
   -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Customer navv */
+/* ================= HEADER ================= */
+.site-header {
+  background: transparent;   /* transparent background */
+  padding: 10px 20px;
+  position: fixed;           /* sticky */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;   /* keep logo pinned to top */
+}
+
+/* Logo */
+.logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  margin-top: 0;             /* ensure it hugs the top */
+}
+
+/* Navbar (desktop) */
+.site-navbar {
+  text-align: right;
+}
+
+.site-navbar .menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-family: "Playfair Display", Times, serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-navbar .menu li a {
+  color: #ffffff;            /* old white color restored */
+  font-size: 30px;
+  padding: 5px 10px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.site-navbar .menu li a:hover {
+  color: #f4f4f4;            /* lighter hover */
+}
+
+/* Underline effect */
+.site-navbar .menu li a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: #ffffff;       /* underline also white */
+  transition: width 0.3s ease-in-out;
+}
+
+.site-navbar .menu li a:hover:before {
+  width: 100%;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;       /* stack logo + menu */
+    align-items: flex-start;      /* align to left */
+  }
+
+  .site-navbar {
+    width: 100%;                  /* full width menu */
+    margin-top: 10px;
+  }
+
+  .site-navbar .menu {
+    flex-direction: column;       /* vertical menu */
+    gap: 15px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .site-navbar .menu li {
+    width: 100%;
+  }
+
+  .site-navbar .menu li a {
+    font-size: 20px;
+    display: block;
+    width: 100%;                  /* full width clickable */
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* subtle divider */
+  }
+}
+/* Force logo to stay at the very top */
+.site-logo {
+  align-self: flex-start;   /* overrides row centering */
+  padding-top: 5px;         /* small spacing from top */
+}
+
+/* Logo image styling */
+.logo-img {
+  height: 100px;            /* desktop size */
+  width: auto;
+  display: block;
+  margin: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); /* subtle shadow for visibility */
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 70px;           /* smaller for mobile */
+    margin-top: 5px;        /* keep it snug at top */
+  }
 }
