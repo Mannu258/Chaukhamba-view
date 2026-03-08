@@ -37,23 +37,22 @@
                         <img src="img/logo.png" alt="Chaukhamba View Camps & Resort Logo" class="logo-img">
                     </a>
                 </div>
-        <!-- Navbar -->
-        <div class="col-8">
-          <nav class="site-navbar">
-            <ul class="menu">
-              <li><a href="/">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+                <!-- Navbar -->
+                <div class="col-8">
+                    <nav class="site-navbar">
+                        <ul class="menu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </header>
-
     </header>
+
 
     <!-- ================= HERO ================= -->
     <section id="home" class="site-hero overlay" style="background-image: url(img/hero_1.jpg)">
@@ -190,14 +189,12 @@
     </section>
 
     <!-- ================= GALLERY ================= -->
-
-
-
-
     <section id="gallery" class="section py-5">
+
+
         <style>
             /* Slider Images */
-            .home-slider img {
+            .swiper-slide img {
                 width: 100%;
                 height: 600px;
                 object-fit: cover;
@@ -205,7 +202,7 @@
                 transition: transform 0.3s;
             }
 
-            .home-slider img:hover {
+            .swiper-slide img:hover {
                 transform: scale(1.03);
             }
 
@@ -218,8 +215,7 @@
                 flex-wrap: wrap;
             }
 
-            .gallery-btn,
-            .home-btn {
+            .gallery-btn {
                 padding: 12px 25px;
                 background: #007bff;
                 color: #fff;
@@ -227,65 +223,36 @@
                 border-radius: 8px;
                 cursor: pointer;
                 transition: all 0.3s ease;
-                text-decoration: none;
                 font-weight: 500;
             }
 
-            .gallery-btn:hover,
-            .home-btn:hover {
+            .gallery-btn:hover {
                 background: #0056b3;
                 transform: scale(1.05);
-            }
-
-            /* Gallery Grid Styles */
-            .gallery-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-                padding-top: 30px;
-            }
-
-            .gallery-grid a {
-                display: block;
-                width: 100%;
-                max-width: 300px;
-                border-radius: 10px;
-                overflow: hidden;
-                transition: transform 0.3s, box-shadow 0.3s;
-            }
-
-            .gallery-grid a:hover {
-                transform: scale(1.05);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
-
-            .gallery-grid img,
-            .gallery-grid video {
-                width: 100%;
-                border-radius: 10px;
-                display: block;
             }
         </style>
 
         <div class="container text-center">
             <h2 class="mb-5">Hotel Gallery</h2>
 
-            <!-- Slider -->
-            <div class="home-slider owl-carousel">
-                <!-- 12 Images -->
-                <img src="img/slider-1.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-2.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-3.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-4.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-5.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-6.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-7.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-8.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-9.jpeg" class="img-fluid rounded"></a>
-                <img src="img/slider-10.jpeg"class="img-fluid rounded"></a>
-                <img src="img/slider-11.jpeg"class="img-fluid rounded"></a>
-                <img src="img/slider-12.jpeg"class="img-fluid rounded"></a>
+            <!-- Swiper Slider -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/slider-1.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-2.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-3.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-4.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-5.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-6.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-7.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-8.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-9.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-10.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-11.jpeg" class="img-fluid rounded"></div>
+                    <div class="swiper-slide"><img src="img/slider-12.jpeg" class="img-fluid rounded"></div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
 
             <!-- Buttons -->
@@ -293,6 +260,36 @@
                 <button class="gallery-btn" onclick="openFullGallery()">View All Photos & Videos</button>
             </div>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                loop: true,
+                spaceBetween: 20,
+                grabCursor: true,
+
+                // ✅ Autoplay settings
+                autoplay: {
+                    delay: 3000,       // 3 seconds per slide
+                    disableOnInteraction: false, // continue autoplay after user interacts
+                },
+
+                // ✅ Pagination
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+
+                // ✅ Navigation arrows (optional, remove if not needed)
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                speed: 800, // transition speed in ms
+            });
+        </script>
     </section>
 
     <script>
@@ -416,31 +413,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
-
-    <!-- FIXED MENU SCRIPT -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const menuToggle = document.querySelector(".js-site-menu-toggle");
-            const siteNavbar = document.querySelector(".js-site-navbar");
-            const navLinks = document.querySelectorAll(".site-navbar .nav-link");
-
-            if (menuToggle) {
-                menuToggle.addEventListener("click", function () {
-                    siteNavbar.classList.toggle("active");
-                    menuToggle.classList.toggle("active");
-                });
-            }
-
-            navLinks.forEach(function (link) {
-                link.addEventListener("click", function () {
-                    siteNavbar.classList.remove("active");
-                    menuToggle.classList.remove("active");
-                });
-            });
-
-        });
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
 </body>
 

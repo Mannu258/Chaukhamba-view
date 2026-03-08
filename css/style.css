@@ -1,10 +1,12 @@
 body {
-  background: #fff;
-  font-family: "Mukta Mahee", arial, sans-serif;
-  font-weight: 200;
+  background: linear-gradient(to bottom, #eef1f4, #f8f9fa);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 300;
   font-size: 16px;
   line-height: 1.8;
-  color: #6c757d;
+  color: #444;
+  letter-spacing: 0.3px;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::-moz-selection {
@@ -928,12 +930,14 @@ textarea.form-control {
 @media (max-width: 768px) {
   .site-header {
     flex-direction: column;       /* stack logo + menu */
-    align-items: flex-start;      /* align to left */
+    align-items: flex-start;
+    
   }
 
   .site-navbar {
     width: 100%;                  /* full width menu */
     margin-top: 10px;
+    
   }
 
   .site-navbar .menu {
@@ -948,10 +952,9 @@ textarea.form-control {
   }
 
   .site-navbar .menu li a {
-    font-size: 20px;
+    font-size: 12px;
     display: block;
-    width: 100%;                  /* full width clickable */
-    border-bottom: 1px solid rgba(255,255,255,0.2); /* subtle divider */
+    width: 100%;
   }
 }
 /* Force logo to stay at the very top */
